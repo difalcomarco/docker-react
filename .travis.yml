@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+    
+before_install:
+    - docker build -e CI=true -t difalcomarco/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run difalcomarco/docker-react npm run test -- --coverage
