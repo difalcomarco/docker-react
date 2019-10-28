@@ -3,7 +3,7 @@ WORKDIR '/app'
 COPY package.json .
 RUN npm install
 COPY . .
-
+RUN chmod a+x
 RUN npm run build
 
 FROM nginx
