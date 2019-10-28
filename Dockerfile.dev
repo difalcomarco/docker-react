@@ -3,7 +3,8 @@ FROM node:alpine
 WORKDIR '/app'
 COPY package.json .
 RUN npm install
-RUN chmod a+x /app/node_modules/react-scripts
-COPY . .
 
+COPY . .
+RUN chmod a+x '/app'
+#RUN chmod a+x '/app/node_modules/react-scripts'
 CMD ["npm", "run", "start"]
